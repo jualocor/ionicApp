@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CheckPageRoutingModule } from './check-routing.module';
+import { FabPageRoutingModule } from './fab-routing.module';
 
-import { CheckPage } from './check.page';
+import { FabPage } from './fab.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ComponentsModule } from 'src/app/components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    CheckPageRoutingModule,
+    FabPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [CheckPage]
+  declarations: [FabPage]
 })
-export class CheckPageModule {}
+export class FabPageModule {}
