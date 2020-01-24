@@ -47,6 +47,11 @@ export class InicioPage implements OnInit {
       icon:'car',
       name:"fabs",
       redirectTo: "/fab"
+    },
+    {
+      icon:'bluetooth',
+      name:"Bluetooth",
+      redirectTo: "/blue"
     }
   ];
 

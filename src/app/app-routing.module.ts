@@ -39,6 +39,18 @@ const routes: Routes = [
     path: 'fab',
     loadChildren: () => import('./pages/fab/fab.module').then( m => m.FabPageModule)
   },
+  {
+    path: 'blue',
+    loadChildren: () => import('./pages/blue/blue.module').then( m => m.BluePageModule)
+  },
+  {
+    path: 'detail-page',
+    loadChildren: () => import('./pages/detail-page/detail-page.module').then( m => m.DetailPagePageModule)
+  },
+  {
+    path: 'login-nube',
+    loadChildren: () => import('./pages/login-nube/login-nube.module').then( m => m.LoginNubePageModule)
+  },
 ];
 
 @NgModule({
