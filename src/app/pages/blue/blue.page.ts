@@ -38,12 +38,13 @@ export class BluePage {
     setTimeout(this.setStatus.bind(this), 500, 'Scan Complete');
   }
 
-  async presentToast(message: string) {
+  async presentToast(message: string, position: "bottom" | "middle" | "top" = "top") {
 
     console.log(message);
     const toast = await this.toastCtrl.create({
       message,
-      duration: 5000
+      duration: 5000,
+      position
     });
     toast.present();
   }

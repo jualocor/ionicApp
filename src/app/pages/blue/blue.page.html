@@ -1,25 +1,8 @@
 <app-header titulo="BLE Scan"></app-header>
-
-<ion-button fill="outline" (click)="scan()">
+<ion-content padding>
+  <ion-button fill="outline" expand="block" (click)="scan()">
   Scan
 </ion-button>
-
-<ion-content>
-  <!--<ion-list>
-    <ion-item *ngFor="let device of devices">
-      <ion-button>
-        <h2>
-          {{device.name || 'Unnamed'}}
-        </h2>
-        <p>
-          {{device.id}}
-        </p>
-        <p>
-          RRSI: {{device.rssi}}
-        </p>
-      </ion-button>
-    </ion-item>
-  </ion-list>-->
   <ion-list>
     <ion-card *ngFor="let device of devices" (click)='goToDetail(device)'>
     <ion-card-header>
@@ -30,21 +13,5 @@
       RRSI: {{device.rssi}}
     </ion-card-content>
   </ion-card>
-    <!--<ion-item >
-      <ion-avatar slot="start">
-            <img src="/assets/logoPower.png">
-        </ion-avatar>
-        <ion-row>
-        <ion-label>
-          {{device.name || 'No name'}}
-        </ion-label>
-        </ion-row>
-        <ion-row>
-        <ion-label>
-          {{device.id}}
-        </ion-label>
-        </ion-row>
-        <ion-icon slot="end" name="bluetooth"></ion-icon>
-    </ion-item>-->
   </ion-list>
 </ion-content>

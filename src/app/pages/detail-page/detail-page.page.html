@@ -1,8 +1,8 @@
 <app-header [titulo]='device.name'></app-header>
-<ion-button fill="outline" (click)="deviceSelected()" [color]="colorButton">
+<ion-content>
+  <ion-button (click)="deviceSelected()" [color]="colorButton">
   {{status}}
 </ion-button>
-<ion-content>
   <ion-list>
     <ion-item>
       <ion-label>

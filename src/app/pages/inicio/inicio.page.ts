@@ -52,6 +52,11 @@ export class InicioPage implements OnInit {
       icon:'bluetooth',
       name:"Bluetooth",
       redirectTo: "/blue"
+    },
+    {
+      icon:'log-in',
+      name:"Login",
+      redirectTo: "/login-nube"
     }
   ];
 
