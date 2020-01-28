@@ -1,9 +1,12 @@
 <app-header titulo="BLE Scan"></app-header>
-<ion-content padding>
-  <ion-button fill="outline" expand="block" (click)="scan()">
+<ion-content>
+  <!--<ion-button fill="outline" expand="block" (click)="scan()" padding>
   Scan
-</ion-button>
-  <ion-list>
+</ion-button>-->
+<ion-refresher slot='fixed' (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content>
+  </ion-refresher-content>
+</ion-refresher>
     <ion-card *ngFor="let device of devices" (click)='goToDetail(device)'>
     <ion-card-header>
       <ion-card-title>{{device.name}}</ion-card-title>
@@ -13,5 +16,4 @@
       RRSI: {{device.rssi}}
     </ion-card-content>
   </ion-card>
-  </ion-list>
 </ion-content>

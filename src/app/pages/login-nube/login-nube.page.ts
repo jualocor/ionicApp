@@ -38,11 +38,12 @@ export class LoginComponent implements OnInit {
     email: 'mpenate@power-electronics.com',
     password: '12345678'
   };
+  items = [];
   /**
    * User Logged
    */
-
-  loggedUser: {};
+  email: string;
+  name: string;
 
   /**
    * Constructor
@@ -76,9 +77,14 @@ export class LoginComponent implements OnInit {
     if (flogin.invalid ) {return;}
     const valid = await this.authenticationService.login(this.loginUser.email, this.loginUser.password);
     console.log(valid)
-    this.loggedUser = JSON.stringify(valid['user']);
+    this.email = valid['user']['email'];
+    this.name = valid['user']['name'];
   }
 
+  async test(){
+    const valid = await this.authenticationService.test();
+    this.items = valid;
+  }
   /**
    * Function to log user when the form is valid
    */

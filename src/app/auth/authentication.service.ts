@@ -42,6 +42,15 @@ export class AuthenticationService {
   public get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
+  test() {
+    return new Promise( resolve => {
+      this.http.get("https://jsonplaceholder.typicode.com/todos")
+      .subscribe( async resp => {
+          resolve(resp);
+      }
+      )
+    })
+  }
 
   /**
    * Function to log a user from backend
@@ -68,10 +77,10 @@ export class AuthenticationService {
 
     const body = { email: emailForm, password: passwordForm };
     return new Promise( resolve => {
-      this.http.post<User>(url, body, options)
+      this.http.post(url, body, options)
       .subscribe( async resp => {
-        if (resp && resp.token) {
-          resolve(<User>resp);
+        if (resp && resp['token']) {
+          resolve(resp);
         }
       }
       )

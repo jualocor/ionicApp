@@ -23,10 +23,10 @@ export class BluePage {
               private alertCtrl: AlertController,
               private router: Router
   ) { }
-  // ionViewDidEnter() {
-  //   console.log("ionViewDidEnter");
-  //   this.scan();
-  // }
+  ionViewDidEnter() {
+    console.log("ionViewDidEnter");
+    this.scan();
+  }
   scan(){
     this.presentToast("Scanning Blue devices");
     this.devices = [];
@@ -165,5 +165,12 @@ export class BluePage {
       }
     }
     this.router.navigate(['detail-page'],navigationExtras);
+  }
+  doRefresh(event) {
+    setTimeout(() => {
+      this.scan();
+      event.target.complete();
+    }, 1500)
+    
   }
 }
