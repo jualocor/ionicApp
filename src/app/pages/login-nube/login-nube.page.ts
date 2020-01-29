@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { NgForm } from "@angular/forms";
 import { AuthenticationService } from "../../auth/authentication.service";
 import { User } from "../../models/user";
+import { Item } from "../../models/item";
 
 @Component({
   selector: 'app-login-nube',
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
     email: 'mpenate@power-electronics.com',
     password: '12345678'
   };
-  items = [];
+  items;
   /**
    * User Logged
    */
@@ -85,6 +86,7 @@ export class LoginComponent implements OnInit {
     const valid = await this.authenticationService.test();
     this.items = valid;
   }
+
   /**
    * Function to log user when the form is valid
    */
