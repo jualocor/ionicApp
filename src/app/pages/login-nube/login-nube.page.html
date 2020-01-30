@@ -33,9 +33,11 @@
   {{name}}
   <ion-list *ngIf="items">
     <ion-item *ngFor="let item of items">
+      <ion-avatar slot="start">
+            <img src="{{item.download_url}}">
+        </ion-avatar> 
       <ion-label>
-        <h2>{{item.id}}</h2>
-        <p>{{item.title}}</p>
+        {{item.author}}
       </ion-label>
     </ion-item>
   </ion-list>

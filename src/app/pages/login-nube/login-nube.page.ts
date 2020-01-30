@@ -84,6 +84,7 @@ export class LoginComponent implements OnInit {
 
   async test(){
     const valid = await this.authenticationService.test();
+    console.log(valid);
     this.items = valid;
   }
 

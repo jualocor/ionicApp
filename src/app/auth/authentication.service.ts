@@ -42,13 +42,33 @@ export class AuthenticationService {
   public get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
+
   test() {
     return new Promise( resolve => {
-      this.http.get("https://jsonplaceholder.typicode.com/todos")
+      this.http.get("https://picsum.photos/v2/list")
       .subscribe( async resp => {
           resolve(resp);
       }
       )
+    })
+  }
+
+  movieApi(page) {
+    return new Promise( resolve => {
+      this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=101938233a5aee484c9578894d1764bd&language=en-US&sort_by=popularity.desc&page="+page)
+      .subscribe( async resp => {
+          resolve(resp['results']);
+      }
+      )
+    })
+  }
+
+  movieDetail(id){
+    return new Promise( resolve => {
+      this.http.get("https://api.themoviedb.org/3/movie/"+id+"/credits?api_key=101938233a5aee484c9578894d1764bd")
+      .subscribe( async resp => {
+        resolve(resp['cast']);
+      })
     })
   }
 
