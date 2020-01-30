@@ -1,0 +1,8 @@
+<ion-card *ngFor="let item of items" (click)="showDetails(item.id, item.poster_path, item.title)">
+    <ion-card-header>
+      <ion-card-title>{{item.title}}</ion-card-title>
+      <ion-card-subtitle>{{item.release_date}}</ion-card-subtitle>
+      <ion-progress-bar value={{item.vote_average}}></ion-progress-bar>
+    </ion-card-header>
+    <img src="https://image.tmdb.org/t/p/original{{item.poster_path}}">
+  </ion-card>

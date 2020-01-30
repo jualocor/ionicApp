@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+  		<ion-icon slot="end" (click)="closeModal()" name="close" size="large"></ion-icon>
+  	    <ion-title>{{title | uppercase}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-avatar>
+        <img src="https://image.tmdb.org/t/p/original{{movieImage}}">
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let actor of cast">
+        <img src="https://image.tmdb.org/t/p/original{{actor.profile_path}}">
+        <ion-card-header>
+        <ion-card-title>
+        	{{actor.name}}
+        </ion-card-title>
+        <ion-card-subtitle>
+        	{{actor.character}}
+        </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
